@@ -1,0 +1,5 @@
+.main-container { 
+  display: flex;
+  background: var(--color-primary-light);
+  height: 87vh;
+}

@@ -1,0 +1,106 @@
+.container-login {
+  height: 100vh; 
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  grid-template-areas: 
+          "login-left login-right"
+ ;
+}
+
+.login-right {
+  margin: 0;
+  background-image: url('../../assets/images/img-home-right.png');
+
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logotipo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  font: 500 2rem Archivo;
+}
+
+.logotipo img {
+  height: 15rem;
+}
+
+.login-left {
+  display: flex;
+  justify-content: center;
+  align-items: initial;
+  margin: 10rem 5rem 10rem 5rem;
+}
+
+.login-container {
+  width: 60%;
+}
+
+.login-left form input{
+  width: 100%;
+}
+
+
+
+/* Button */
+
+.button-container {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button {
+  background: linear-gradient(to right, #df5f96 0%, #694af3 100%);
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 0;
+  border-radius: .8rem;
+  transition: background-color 1s ;
+  cursor: pointer;
+  font: 400 1.3rem Poppins;
+  color: var(--color-base)
+}
+
+.button-container button:hover{
+  background-color: var(--color-primary-dark);
+}
+
+.login-footer {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  font: 400 1.2rem Poppins;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-footer p  {
+  color: #696969; 
+}
+
+.login-footer p a {
+  text-decoration: none;
+  font: 700 1.2rem Archivo;
+  color: --color-secundary;
+  opacity: 0.9;
+}
+
+.login-footer > a {
+  margin-top: 1.2rem;
+  font: 700 1.2rem Archivo;
+  color: --color-secundary;
+  opacity: 0.9;
+}
+
