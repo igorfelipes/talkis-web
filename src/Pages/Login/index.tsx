@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { FormHandles, SubmitHandler } from '@unform/core';
 import { Form } from '@unform/web';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 
@@ -88,7 +89,7 @@ function Login() {
               
               <div className="login-footer">
                 <p>Não tem uma conta? <a href="">Registre-se</a></p>
-                <a href="">Esqueci minha senha</a>
+                <Link to="">Esqueci minha senha</Link>
               </div>
 
             </Form>

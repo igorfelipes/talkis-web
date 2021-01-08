@@ -1,0 +1,114 @@
+/* .main-container { 
+  display: flex;
+  background: var(--color-primary-light);
+  height: 87vh;
+  width: 100%;
+} */
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: 42fr 29fr 29fr;
+  grid-template-areas: 
+          "week-summary countries-range countries-range"
+          "progress-week total-views solicitations"
+ ;
+  height: 87vh;
+  width: 100%;
+  font: 400 1.6rem Archivo;
+  color: #696969; 
+}
+
+
+.week-summary {
+  grid-area: week-summary;
+  margin: 3rem 3rem 3rem 0;
+  padding: 3rem 3.2rem; ;
+  background: var(--color-base);
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line-in-white);
+}
+
+
+.countries-range {
+  grid-area: countries-range;
+  margin: 3rem 3rem 3rem 0;
+  padding: 3rem 3.2rem; ;
+  background: var(--color-base);
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line-in-white);
+}
+
+.progress-week {
+  grid-area: progress-week;
+  margin: 0 3rem 3rem 0;
+  padding: 3rem 3.2rem; ;
+  background: var(--color-base);
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line-in-white);
+}
+
+.total-views {
+  grid-area: total-views;
+  margin: 0 3rem 3rem 0;
+  padding: 3rem 3.2rem; ;
+  background: var(--color-base);
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line-in-white);
+}
+.solicitations {
+  grid-area: solicitations;
+  margin: 0 3rem 3rem 0;
+  padding: 3rem 3.2rem; ;
+  background: var(--color-base);
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line-in-white); 
+}
+
+
+.ws-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#select-block {
+  width: 22%;
+  height: 2.6rem;
+  margin-top: 0.8rem;
+  border: 1px solid var(--color-line-in-white); 
+  border-radius: 0.4rem;
+  outline: 0;
+  padding: 0 1.6rem;
+  background: var(--color-base);
+  font: 1.2rem Archivo;
+  opacity: .8;
+}
+
+#select-block option{
+  background-color: transparent;
+  border: none;
+  filter:alpha(opacity=40);
+  -moz-opacity:.40;
+  opacity:.4;
+}
+
+.pw-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cr-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cr-top-container a {
+  text-decoration: none;
+  font: 400 1.3rem Archivo;
+  color: #498fff;
+}
+
+
+

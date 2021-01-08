@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './styles.css';
 
 function Sidebar() {
@@ -7,15 +9,15 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="header-sidebar">
-        <a href="#"> Dashboard</a>
-        <a href="#"> Agendamento</a>
-        <a href="#"> Atendimento</a>
-        <a href="#"> Formulários</a>
-        <a href="#"> Crédito</a>
+        <Link to="#"> Dashboard</Link>
+        <Link to="#"> Agendamento</Link>
+        <Link to="#"> Atendimento</Link>
+        <Link to="#"> Formulários</Link>
+        <Link to="#"> Crédito</Link>
       </div>
       <div className="footer-sidebar">
-        <a href="#"> Configurações</a>
-        <a href="#"> Sair</a>
+        <Link to="#"> Configurações</Link>
+        <Link to="#"> Sair</Link>
       </div>
    </div>
   )
