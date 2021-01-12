@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import CaptureForms from './Pages/CaptureForms';
 import Dashboard from './Pages/Dashboard';
+import Schedule from './Pages/Schedule';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -20,6 +21,7 @@ function Routes() {
             <Route path="/login" component={Login}/>
             <Route path="/Dashboard" component={Dashboard}/>
             <Route path="/capture-forms" component={CaptureForms}/>
+            <Route path="/schedule" component={Schedule}/>
             <Route path="*" component={() => <h1>Page not found</h1>} />
         </Switch>
     )
