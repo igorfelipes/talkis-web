@@ -4,7 +4,10 @@ import Navbar from '../../components/Navbar';
 import PageBody from '../../components/PageBody';
 import Sidebar from '../../components/Sidebar';
 
+import { FaPlusCircle, FaRegCalendarAlt, FaSyncAlt } from 'react-icons/fa'
+
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function Schedule() {
 
@@ -15,14 +18,32 @@ function Schedule() {
         <Sidebar />
         <div className="body-schedule">
           <section className="section-bar">
-            <a href="">Vincular Conta</a>
-            <a href="">Novo Post</a>
-            <a href="">Calendário</a>
-            <a href="">Loren Ipsun</a>
-            <a href="">Loren Ipsun</a>
-            <a href="">Loren Ipsun</a>
+              <Link   to="#">
+                <FaSyncAlt size={24}/>
+                Vincular Conta
+              </Link >
+              <Link  to="#">
+                <FaPlusCircle size={24}/>
+                Novo Post
+              </Link >
+              <Link  to="#">
+                <FaRegCalendarAlt size={24}/>
+                Calendário
+              </Link >
+              <Link  to="#">
+                <FaRegCalendarAlt size={24}/>
+                Loren Ipsun
+              </Link >
+              <Link  to="#">
+                <FaRegCalendarAlt size={24}/>
+                Loren Ipsun
+              </Link >
+              <Link  to="#">
+                <FaRegCalendarAlt size={24}/>
+                Loren Ipsun
+              </Link >
           </section>
-          <PageBody title="Novo Post" link="#" />
+          <PageBody title="Novo Post"/>
         </div>
       </div>
     </div>

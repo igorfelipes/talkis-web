@@ -13,7 +13,7 @@ import Input from '../../components/Input';
 // import { errorLogin } from '../../utils/Notifications';
 
 import './styles.css';
-import logotipo from '../../assets/images/icons/logo.png';
+import logotipo from '../../assets/images/icons/logo-xm.png';
 // import { User } from '../../store/modules/login/types';
 // import { setUser } from '../../store/modules/login/actions';
 // import { useDispatch } from 'react-redux';

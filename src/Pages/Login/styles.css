@@ -1,4 +1,6 @@
 .container-login {
+  background: url('../../assets/images/icons/bg-login-left.png');
+  background-size: cover;
   height: 100vh; 
   display: grid;
   grid-template-columns: 50fr 50fr;
@@ -23,19 +25,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5.1rem;
   font: 500 2rem Archivo;
 }
 
 .logotipo img {
-  height: 15rem;
+  height: 5rem;
 }
 
 .login-left {
   display: flex;
   justify-content: center;
   align-items: initial;
-  margin: 10rem 5rem 10rem 5rem;
+  margin: 11.25rem 5rem 11.25rem 5rem;
 }
 
 .login-container {
