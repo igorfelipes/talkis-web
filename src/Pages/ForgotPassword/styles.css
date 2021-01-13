@@ -1,0 +1,59 @@
+.container-forgot {
+  background: url('../../assets/images/icons/bg-login-left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  grid-template-areas: 
+          "forgot-header forgot-header"
+          "forgot-left forgot-right"
+ ;
+}
+
+.forgot-header {
+  grid-area: forgot-header;
+  width: 100%;
+  padding-left: 25rem;
+  padding-top: 12rem;
+}
+
+.forgot-header svg {
+  color:#9F47DF;
+}
+
+.fortot-left  {
+  grid-area: forgot-left;
+  padding-left: 7.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.fortot-left img {
+  height: 35rem;
+}
+
+.forgot-right {
+  grid-area: forgot-right;
+  font: 600 1.8rem Roboto;
+  width: 80%;
+  color: #4f585e;
+}
+
+.forgot-right h1 {
+  margin-top: 2rem;
+}
+
+.forgot-right form {
+  margin-top: 8rem;
+  width: 68%;
+}
+
+
+.button-container button {
+  background: #9f47df !important;
+}
+
+

@@ -13,7 +13,8 @@ import Input from '../../components/Input';
 // import { errorLogin } from '../../utils/Notifications';
 
 import './styles.css';
-import logotipo from '../../assets/images/icons/logo-xm.png';
+import { FaArrowLeft } from 'react-icons/fa';
+import ForgotPasswordImg from '../../assets/images/forgot-password.svg';
 // import { User } from '../../store/modules/login/types';
 // import { setUser } from '../../store/modules/login/actions';
 // import { useDispatch } from 'react-redux';
@@ -24,7 +25,7 @@ interface LoginData {
   password: string;
 }
 
-function Login() {
+function ForgotPassword() {
 
   // const dispatch = useDispatch()
   // const history = useHistory();
@@ -71,36 +72,36 @@ function Login() {
   }
 
   return (
-    <div className="container-login">
-      <div className="login-left">
-          <div className="login-container">
+    <div className="container-forgot">
+      <div className="forgot-header">
+        <Link to="/login">
+          <FaArrowLeft size={20}/>
+        </Link>
+      </div>
 
-            <div className="logotipo">
-             <img src={logotipo} alt="logo-talkis"/>
-            </div>
+      <div className="fortot-left">
+        <img src={ForgotPasswordImg} alt="forgot-img"/>
+      </div>
+
+      <div className="forgot-right">
+          <div className="right-wrapper">
+
+            <h1>Digite seu email abaixo para recuperar sua senha</h1>
             
             <Form onSubmit={handleSubmit} ref={formRef}>
               <Input name="email" label="Email" placeholder="Digite seu e-mail"></Input>
-              <Input name="password" label="Senha" type="password" placeholder="Digite sua senha"></Input>
               {/* <SaveForm title="Acessar"/> */}
               <div className="button-container">
-                <button type="submit" >Entrar</button>
-              </div>
-              
-              <div className="login-footer">
-                <p>Não tem uma conta? <a href="">Registre-se</a></p>
-                <Link to="/forgot-password">Esqueci minha senha</Link>
+                <button type="submit" >Enviar</button>
               </div>
 
             </Form>
             
           </div>   
       </div>
-      <div className="login-right">
-        
-      </div>
+
     </div>
   )
 }
 
-export default Login;
+export default ForgotPassword;

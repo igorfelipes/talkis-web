@@ -1,6 +1,7 @@
 .container-login {
   background: url('../../assets/images/icons/bg-login-left.png');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 100vh; 
   display: grid;
   grid-template-columns: 50fr 50fr;

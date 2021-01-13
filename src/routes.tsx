@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import CaptureForms from './Pages/CaptureForms';
 import Dashboard from './Pages/Dashboard';
 import Schedule from './Pages/Schedule';
+import ForgotPassword from './Pages/ForgotPassword';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -19,6 +20,7 @@ function Routes() {
         <Switch>
             {/* <Route path="/" exact component={Home}/> */}
             <Route path="/login" component={Login}/>
+            <Route path="/forgot-password" component={ForgotPassword}/>
             <Route path="/Dashboard" component={Dashboard}/>
             <Route path="/capture-forms" component={CaptureForms}/>
             <Route path="/schedule" component={Schedule}/>
