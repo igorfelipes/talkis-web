@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { FaArrowLeft, FaLink, FaPlus } from 'react-icons/fa';
 import addIcon from '../../assets/images/icons/add-white.svg';
 
 import './styles.css'
@@ -17,12 +18,19 @@ const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children}) => {
             <article className="page-body">
                <header className="top-header">
                     <div className="top-bar-container">
-                        <h1>{title}</h1>
+                        <div className="wrap-title">
+                            <Link to="/dashboard">
+                                <FaArrowLeft size={20}/>
+                            </Link>
+                            <h1>{title}</h1>
+                            { !link && <FaLink size={20}/>}
+                        </div>
                         
                         { link && (
                             <Link to= {link}>
                                 Novo Formulário
-                                <img src={addIcon} alt="Novo cadastro"/>
+                                <FaPlus size={17}/>
+                                {/* <img src={addIcon} alt="Novo cadastro"/> */}
                             </Link>
                         )}
                         

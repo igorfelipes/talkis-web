@@ -14,13 +14,22 @@
   justify-content: space-between;
 }
 
+.sidebar svg {
+  margin-right: 1rem;
+}
+
+.sidebar img {
+  width: 15px;
+  height: 15px;
+}
+
 .sidebar a {
   height: 6rem;
   text-decoration: none;
   width: 100%;
   padding: 2rem 0 2rem 2rem;
-  font: 700 1.4rem Archivo;
-  color: #9F47DF;
+  font: 400 1.4rem Archivo;
+  color: #696969; 
   opacity: 0.9;
   position: relative;
   overflow: hidden;
@@ -40,6 +49,11 @@
   opacity: 0;
 }
 .sidebar a:hover::after{opacity:1}
+
+.sidebar a:hover {
+  color:#9F47DF;
+  font: 700 1.4rem Archivo;
+}
 
 /* .sidebar a:hover {
   border-left: .7rem solid #9F47DF;

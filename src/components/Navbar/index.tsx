@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import logotipo from '../../assets/images/icons/logo.png';
+import logotipo from '../../assets/images/icons/logo-sm.png';
 import imgPerfil from '../../assets/images/perfil.png';
 
 import './styles.css';
