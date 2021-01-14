@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaPen, FaRegClipboard, FaRegEye, FaRegTrashAlt } from 'react-icons/fa';
+import CardCapForm from '../../components/CardCapForm';
 
 import Navbar from '../../components/Navbar';
 import PageBody from '../../components/PageBody';
@@ -13,7 +15,15 @@ function CaptureForms() {
       <Navbar />
       <div className="main-container">
         <Sidebar />
-        <PageBody title="Formulários de captura" link="#"/>
+        <PageBody title="Formulários de captura" link="#">
+          <div className="card-container">
+            <CardCapForm />
+            <CardCapForm />
+            <CardCapForm />
+            <CardCapForm />
+            <CardCapForm />
+          </div>
+        </PageBody>
       </div>
     </div>
 

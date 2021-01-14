@@ -1,0 +1,37 @@
+import React from 'react';
+
+import { FaPen, FaRegClipboard, FaRegEye, FaRegTrashAlt } from 'react-icons/fa';
+
+import './styles.css';
+
+
+function CardCapForm() {
+
+  return (
+    <div className="card-capture-form">
+      <h1>Formulário lançamento loren ipsun</h1>
+      <hr/>
+
+      <FaRegClipboard size={50}/>
+      <div className="button-form">
+        <button type="submit" >Ver formulário</button>
+      </div>
+
+      <hr/>
+
+      <footer>
+        <div className="left-content">
+        <FaRegEye size={15} />
+        <span>1234</span>
+        </div>
+
+        <div className='right-icons'>
+          <FaRegTrashAlt size={12} />
+          <FaPen size={12}/>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default CardCapForm;

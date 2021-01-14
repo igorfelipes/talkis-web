@@ -3,3 +3,8 @@
   background: var(--color-primary-light);
   height: 87vh;
 }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
