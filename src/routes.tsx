@@ -8,6 +8,7 @@ import CaptureForms from './Pages/CaptureForms';
 import Dashboard from './Pages/Dashboard';
 import Schedule from './Pages/Schedule';
 import ForgotPassword from './Pages/ForgotPassword';
+import MailSent from './Pages/MailSent';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -21,6 +22,7 @@ function Routes() {
             {/* <Route path="/" exact component={Home}/> */}
             <Route path="/login" component={Login}/>
             <Route path="/forgot-password" component={ForgotPassword}/>
+            <Route path="/mail-sent" component={MailSent}/>
             <Route path="/Dashboard" component={Dashboard}/>
             <Route path="/capture-forms" component={CaptureForms}/>
             <Route path="/schedule" component={Schedule}/>

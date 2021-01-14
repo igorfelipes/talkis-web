@@ -14,7 +14,7 @@ import Input from '../../components/Input';
 
 import './styles.css';
 import { FaArrowLeft } from 'react-icons/fa';
-import ForgotPasswordImg from '../../assets/images/forgot-password.svg';
+import MailSentImg from '../../assets/images/mail-sent.svg';
 // import { User } from '../../store/modules/login/types';
 // import { setUser } from '../../store/modules/login/actions';
 // import { useDispatch } from 'react-redux';
@@ -25,7 +25,7 @@ interface LoginData {
   password: string;
 }
 
-function ForgotPassword() {
+function MailSent() {
 
   // const dispatch = useDispatch()
   // const history = useHistory();
@@ -34,7 +34,6 @@ function ForgotPassword() {
   const handleSubmit: SubmitHandler<LoginData> = async data => {
 
     console.log('submit handle')
-    window.location.href='/mail-sent'
     // try{
     //   formRef.current?.setErrors({})
 
@@ -73,36 +72,38 @@ function ForgotPassword() {
   }
 
   return (
-    <div className="container-forgot">
-      <div className="forgot-header">
-        <Link to="/login">
+    <div className="container-mail">
+      <div className="mail-header">
+        <Link to="/forgot-password">
           <FaArrowLeft size={20}/>
         </Link>
       </div>
 
-      <div className="fortot-left">
-        <img src={ForgotPasswordImg} alt="forgot-img"/>
+      <div className="mail-left">
+        <div className="right-wrapper">
+
+          <h1>O email foi enviado!</h1>
+          <p>Por favor, abra sua caixa de entrada e clique no link 
+            recebido para alterar sua senha, caso não tenha encontrado,
+            verifique a lixeira ou caixa de spam.
+          </p>
+
+
+          <div className="button-container">
+            <span>Não recebeu o email?</span>
+            <button type="submit" >Enviar novamente</button>
+          </div>
+
+        </div>   
+
       </div>
 
-      <div className="forgot-right">
-          <div className="right-wrapper">
-
-            <h1>Digite seu email abaixo para recuperar sua senha</h1>
-            
-            <Form onSubmit={handleSubmit} ref={formRef}>
-              <Input name="email" label="Email" placeholder="Digite seu e-mail"></Input>
-              {/* <SaveForm title="Acessar"/> */}
-              <div className="button-container">
-                <button type="submit" >Enviar</button>
-              </div>
-
-            </Form>
-            
-          </div>   
+      <div className="mail-right">
+        <img src={MailSentImg} alt="forgot-img"/>
       </div>
 
     </div>
   )
 }
 
-export default ForgotPassword;
+export default MailSent;

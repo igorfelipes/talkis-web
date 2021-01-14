@@ -1,0 +1,79 @@
+.container-mail {
+  background: url('../../assets/images/icons/bg-login-left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  grid-template-areas: 
+          "mail-header mail-header"
+          "mail-left mail-right"
+ ;
+}
+
+.mail-header {
+  grid-area: mail-header;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* width: 100%; */
+  padding-left: 17rem;
+  padding-top: 12rem;
+}
+
+.mail-header svg {
+  color:#9F47DF;
+}
+
+.mail-right  {
+  grid-area: mail-right;
+  padding-left: 7.6rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.mail-right img {
+  height: 35rem;
+}
+
+.mail-left {
+  padding-left: 17rem;
+  grid-area: mail-left;
+  font: 600 1.8rem Roboto;
+  width: 80%;
+  color: #4f585e;
+}
+
+.mail-left h1 {
+  margin-top: 2rem;
+}
+
+.mail-left p {
+  font: 400 1.5rem Roboto;
+  line-height: 1.8;
+  margin-top: 3rem;
+}
+
+.mail-left form {
+  margin-top: 8rem;
+  width: 90%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 4rem;
+}
+
+.button-container span {
+  margin-top: 3rem;
+  font: 600 1.5rem Roboto;
+}
+.button-container button {
+  margin-top: 2rem;
+  background: #9f47df !important;
+}
+
+
