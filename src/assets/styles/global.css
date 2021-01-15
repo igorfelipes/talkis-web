@@ -28,6 +28,22 @@ html, body, #root {
     height: 100vh; /* Faz com que a página ocupe sempre a altura total da tela */
 }
 
+::-webkit-scrollbar {
+    width: .7rem;
+    height: .7rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+  
+
 
 /* .container {
     width: 100%;
