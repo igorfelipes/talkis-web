@@ -33,6 +33,7 @@ function Login() {
   const handleSubmit: SubmitHandler<LoginData> = async data => {
 
     console.log('submit handle')
+    window.location.href='/dashboard'
     // try{
     //   formRef.current?.setErrors({})
 
