@@ -10,9 +10,10 @@ import './styles.css'
 interface PageBodyProps {
     title: string;
     link?: string;
+    newPost?: boolean;
 }
 
-const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children}) => {
+const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children, newPost}) => {
     return (
         // <div className="container">
             <article className="page-body">
@@ -23,7 +24,7 @@ const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children}) => {
                                 <FaArrowLeft size={20}/>
                             </Link>
                             <h1>{title}</h1>
-                            { !link && <FaLink size={20}/>}
+                            { newPost && <FaLink size={20}/>}
                         </div>
                         
                         { link && (

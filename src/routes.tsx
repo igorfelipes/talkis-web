@@ -9,6 +9,7 @@ import Dashboard from './Pages/Dashboard';
 import Schedule from './Pages/Schedule';
 import ForgotPassword from './Pages/ForgotPassword';
 import MailSent from './Pages/MailSent';
+import Settings from './Pages/Settings';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -26,6 +27,7 @@ function Routes() {
             <Route path="/Dashboard" component={Dashboard}/>
             <Route path="/capture-forms" component={CaptureForms}/>
             <Route path="/schedule" component={Schedule}/>
+            <Route path="/settings" component={Settings}/>
             <Route path="*" component={() => <h1>Page not found</h1>} />
         </Switch>
     )

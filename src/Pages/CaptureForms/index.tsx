@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaPen, FaRegClipboard, FaRegEye, FaRegTrashAlt } from 'react-icons/fa';
 import CardCapForm from '../../components/CardCapForm';
 
 import Navbar from '../../components/Navbar';

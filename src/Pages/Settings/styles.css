@@ -1,0 +1,173 @@
+.main-container { 
+  display: flex;
+  background: var(--color-primary-light);
+  height: 87vh;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  grid-template-areas: 
+          "profile-header profile-header"
+          "user-data change-password"
+ ;
+}
+
+.profile-header {
+  grid-area: profile-header;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.profile-header label {
+  font: 600 2.1rem Roboto;
+  color: #696969;
+  margin-left: 2.4rem; 
+}
+
+.img-perfil {
+  display: flex;
+  flex-direction: column; 
+  
+}
+
+.img-perfil .edit-icon {
+  position: absolute;
+  margin-left: 8rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #9f47df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-base);
+  border-radius: 50%;
+}
+
+/* .img-perfil svg {
+ justify-self: right;
+ margin-left: 8rem;
+ background-color: #9f47df;
+ background-size: 100px;
+ color: var(--color-base);
+ border: 1px solid #9f47df;
+ border-radius: 50%;
+} */
+
+
+.img-perfil img{
+  height: 8rem;
+}
+
+.button-remove {
+  margin-left: 7rem;
+}
+
+.button-remove button{
+  background: var(--color-base) !important;
+  height: 4rem;
+  width: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: .4rem;
+  border: 1px solid var(--color-line-in-white);
+  box-shadow: var(--panel-shadow);
+  transition: background-color 1s ;
+  cursor: pointer;
+  font: 600 1.3rem Roboto;
+  color: #696969;
+  opacity: .8;
+}
+
+.user-data {
+  margin-top: 3rem;
+  padding: 3rem 4rem 0rem 4rem;
+  grid-area: user-data;
+  border-radius: .9rem;
+  border: 1px solid var(--color-line-in-white);
+  box-shadow: var(--panel-shadow);
+  font: 600 1.3rem Roboto;
+  color: #696969;
+  width: 70%;
+  height: 30rem;
+  justify-self: flex-end;
+}
+
+.username-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.username-block > .input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-block .input-block {
+  margin-top: 0 !important;
+}
+
+.username-block .input-block input {
+  width: 90% !important;
+  font: 400 1.4rem Roboto;
+  color: #696969;
+  opacity: .8;
+}
+
+.email-block {
+  margin-top: 1.6rem;
+}
+
+.email-block .input-block input {
+  font: 400 1.4rem Roboto;
+  color: #696969;
+  opacity: .8;
+  width: 93%;
+  margin-bottom: 1rem;
+}
+
+.email-block .button-container {
+  margin: 0;
+  height: 6rem;
+  width: 30% !important;
+}
+
+.email-block .button-container button {
+  font: 400 1.3rem Roboto;
+}
+
+.change-password {
+  grid-area: change-password;
+  margin: 3rem 0 1rem 7rem;
+  font: 400 1rem Roboto;
+  color: #696969;
+}
+
+.change-password h1 {
+  opacity: .6;
+  margin-bottom: 2rem;
+}
+
+.change-password .input-block {
+  width: 50%;
+}
+
+.change-password .input-block + .input-block {
+  margin-top: 1rem;
+}
+
+.change-password .input-block input {
+  height: 4rem;
+}
+
+.change-password .button-container {
+  margin-top: 0;
+  width: 30%;
+  height: 6rem;
+  font: 400 1.3rem Roboto;
+}

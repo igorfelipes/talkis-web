@@ -43,7 +43,7 @@ function Schedule() {
                 Loren Ipsun
               </Link >
           </section>
-          <PageBody title="Novo Post"/>
+          <PageBody title="Novo Post" newPost={true}/>
         </div>
       </div>
     </div>

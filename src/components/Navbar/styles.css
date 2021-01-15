@@ -24,11 +24,12 @@
 }
 
 .left-content img {
-  height: 7rem;
+  height: 6rem;
   margin-right: 3rem;
+  margin-left: 1.6rem !important;
 }
 
 .left-content label {
-  font: 700 1.4rem Archivo;
+  font: 700 1.4rem Roboto;
   color: #696969; 
 }
