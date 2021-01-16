@@ -6,10 +6,11 @@ import { Switch, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import CaptureForms from './Pages/CaptureForms';
 import Dashboard from './Pages/Dashboard';
-import Schedule from './Pages/Schedule';
+import LinkAccount from './Pages/LinkAccount';
 import ForgotPassword from './Pages/ForgotPassword';
 import MailSent from './Pages/MailSent';
 import Settings from './Pages/Settings';
+import NewPost from './Pages/NewPost';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -26,7 +27,8 @@ function Routes() {
             <Route path="/mail-sent" component={MailSent}/>
             <Route path="/Dashboard" component={Dashboard}/>
             <Route path="/capture-forms" component={CaptureForms}/>
-            <Route path="/schedule" component={Schedule}/>
+            <Route path="/link-account" component={LinkAccount}/>
+            <Route path="/new-post" component={NewPost}/>
             <Route path="/settings" component={Settings}/>
             <Route path="*" component={() => <h1>Page not found</h1>} />
         </Switch>
