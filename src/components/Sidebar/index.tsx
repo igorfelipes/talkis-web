@@ -11,7 +11,7 @@ function Sidebar() {
     <div className="sidebar">
       <div className="header-sidebar">
         <Link to="/dashboard"><FaColumns size={15}/>Dashboard</Link>
-        <Link to="schedule"><FaRegCalendarAlt size={15}/> Agendamento</Link>
+        <Link to="/link-account"><FaRegCalendarAlt size={15}/> Agendamento</Link>
         <Link to="#"><FaRegSmile size={15} /> Atendimento</Link>
         <Link to="/capture-forms"><FaRegEnvelope size={15} /> Formulários</Link>
         <Link to="#"><FaRegEnvelope size={15} /> Crédito</Link>

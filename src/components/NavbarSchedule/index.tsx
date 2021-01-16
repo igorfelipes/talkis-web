@@ -10,11 +10,11 @@ function NavbarSchedule() {
 
   return (
     <section className="section-bar">
-      <Link   to="#">
+      <Link   to="/link-account">
         <FaSyncAlt size={24}/>
         Vincular Conta
       </Link >
-      <Link  to="#">
+      <Link  to="/new-post">
         <FaPlusCircle size={24}/>
         Novo Post
       </Link >
