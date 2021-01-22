@@ -9,9 +9,10 @@ import Input from '../../components/Input';
 
 import imgPerfil from '../../assets/images/perfil.png';
 
-import { FaCircle, FaPen } from 'react-icons/fa';
+import { FaPen } from 'react-icons/fa';
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 interface ProfileData {
   firstname: string;
@@ -51,11 +52,11 @@ function Settings() {
 
             <div className="profile-header">
               <div className="img-perfil">
-                  <a href="#">
+                  <Link to="#">
                     <div className="edit-icon">
                       <FaPen size={8.6} className="fa-pen"/>
                     </div>
-                  </a>
+                  </Link>
                   <img src={imgPerfil} alt="img-perfil"/>
               </div>
               <label htmlFor="perfil">Igor Sales</label>
