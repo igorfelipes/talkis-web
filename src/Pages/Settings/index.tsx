@@ -51,9 +51,11 @@ function Settings() {
 
             <div className="profile-header">
               <div className="img-perfil">
-                  <div className="edit-icon">
-                    <FaPen size={8.6} className="fa-pen"/>
-                  </div>
+                  <a href="#">
+                    <div className="edit-icon">
+                      <FaPen size={8.6} className="fa-pen"/>
+                    </div>
+                  </a>
                   <img src={imgPerfil} alt="img-perfil"/>
               </div>
               <label htmlFor="perfil">Igor Sales</label>
