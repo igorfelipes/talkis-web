@@ -1,41 +1,17 @@
-import React, { useRef } from 'react';
-import { Form } from '@unform/web';
-import { FormHandles, SubmitHandler } from '@unform/core';
+import React from 'react';
+
 
 import Navbar from '../../components/Navbar';
 import NavbarSchedule from '../../components/NavbarSchedule';
 import PageBody from '../../components/PageBody';
 import Sidebar from '../../components/Sidebar';
-import Select from '../../components/Select';
+
+import { FaFacebookSquare, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { SiGooglemybusiness  } from 'react-icons/si';
+import CardAccount from '../../components/CardAccount';
 
 import './styles.css';
-import Input from '../../components/Input';
-import TextArea from '../../components/TextArea';
-import Upload from '../../components/Upload';
-import CardCapForm from '../../components/CardCapForm';
 
-interface NewPostData {
-  selectedAccounts: string;
-  date: string;
-  time: string;
-  channels: string;
-  subtitle: string;
-}
-
-const optionsAccounts = [
-  { value: 1, label: 'Selecione as contas'},
-  { value: 2, label: 'Segunda'},
-  { value: 3, label: 'Terceira'},
-  { value: 4, label: 'Quarta'},
-  { value: 5, label: 'Quinta'},
-]
-const optionsChannels = [
-  { value: 1, label: 'Canais'},
-  { value: 2, label: 'Canal 1'},
-  { value: 3, label: 'Canal 2'},
-  { value: 4, label: 'Canal 3'},
-  { value: 5, label: 'Canal 4'},
-]
 
 function LinkAccount() {
 
@@ -48,11 +24,21 @@ function LinkAccount() {
           <NavbarSchedule />
           <PageBody title="Vincular Conta" newPost={true}>
             <div className="link-account">
-              <div className="card-account">
-
-
-              
+              <div className="top-links">
+                <CardAccount name="Facebook">
+                  <FaFacebookSquare size={40}/>
+                </CardAccount>
+                <CardAccount name="Twitter" className="face-account twitter">
+                  <FaTwitter size={40}/>
+                </CardAccount>
+                <CardAccount name="Instagram" className="face-account instagram">
+                  <FaInstagram size={40}/>
+                </CardAccount>
+                <CardAccount name="Google Meu Negócio" className="face-account gmn">
+                  <SiGooglemybusiness size={40}/>
+                </CardAccount>            
               </div>
+
             </div>
           </PageBody>
         </div>

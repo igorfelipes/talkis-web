@@ -51,6 +51,9 @@
   width: 68%;
 }
 
+.button-container {
+  margin-top: 2rem !important;
+}
 
 .button-container button {
   background: #9f47df !important;
