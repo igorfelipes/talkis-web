@@ -51,11 +51,11 @@
   width: 68%;
 }
 
-.button-container {
+.forgot-right .button-container {
   margin-top: 2rem !important;
 }
 
-.button-container button {
+.forgot-right .button-container button {
   background: #9f47df !important;
 }
 
