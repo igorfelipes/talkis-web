@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { FaArrowLeft, FaLink, FaPlus } from 'react-icons/fa';
-import addIcon from '../../assets/images/icons/add-white.svg';
+// import addIcon from '../../assets/images/icons/add-white.svg';
 
 import './styles.css'
 

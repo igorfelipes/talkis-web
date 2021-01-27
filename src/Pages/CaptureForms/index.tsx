@@ -14,7 +14,7 @@ function CaptureForms() {
       <Navbar />
       <div className="main-container">
         <Sidebar />
-        <PageBody title="Formulários de captura" link="#">
+        <PageBody title="Formulários de captura" link="/new-form">
           <div className="card-container">
             <CardCapForm />
             <CardCapForm />
