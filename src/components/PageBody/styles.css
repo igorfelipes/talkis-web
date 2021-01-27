@@ -28,7 +28,11 @@
     justify-content: space-between;
 }
 
-.page-body .top-bar-container > a {
+.page-body .top-bar-container .wrapper-buttons {
+    display: flex;
+}
+
+.page-body .top-bar-container .wrapper-buttons a {
     display: flex;
     background-color: var(--color-button);
     text-decoration: none;
@@ -41,6 +45,27 @@
     transition: opacity 1s ;
     font: 400 1.3rem Archivo;
 }
+
+.page-body .top-bar-container .wrapper-buttons .trash {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 17rem;
+    color: #696969;
+    transition: opacity 1s ;
+    font: 600 1.3rem Roboto;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: .7;
+}
+
+.page-body .top-bar-container .trash svg {
+    margin-right: 1.2rem;
+}
+
+
 
 .page-body .top-bar-container a:hover{
     opacity: .5;

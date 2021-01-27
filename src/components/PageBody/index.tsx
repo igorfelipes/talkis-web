@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { FaArrowLeft, FaLink, FaPlus } from 'react-icons/fa';
+import { FaArrowLeft, FaLink, FaPlus, FaTrash } from 'react-icons/fa';
 // import addIcon from '../../assets/images/icons/add-white.svg';
 
 import './styles.css'
@@ -11,9 +11,10 @@ interface PageBodyProps {
     title: string;
     link?: string;
     newPost?: boolean;
+    trash?: boolean;
 }
 
-const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children, newPost}) => {
+const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children, newPost, trash}) => {
     return (
         // <div className="container">
             <article className="page-body">
@@ -26,14 +27,24 @@ const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children, newPost}) 
                             <h1>{title}</h1>
                             { newPost && <FaLink size={20}/>}
                         </div>
-                        
-                        { link && (
-                            <Link to= {link}>
-                                Novo Formulário
-                                <FaPlus size={17}/>
-                                {/* <img src={addIcon} alt="Novo cadastro"/> */}
-                            </Link>
-                        )}
+
+                       <div className="wrapper-buttons">
+                        { trash && (
+                                <Link to="#" className="trash">
+                                    <FaTrash size={17} />
+                                    Excluir
+                                    {/* <img src={addIcon} alt="Novo cadastro"/> */}
+                                </Link>
+                            )}
+                            
+                            { link && (
+                                <Link to= {link}>
+                                    Novo Formulário
+                                    <FaPlus size={17}/>
+                                    {/* <img src={addIcon} alt="Novo cadastro"/> */}
+                                </Link>
+                            )}
+                       </div>
                         
                     </div>
                 </header>

@@ -12,6 +12,7 @@ import MailSent from './Pages/MailSent';
 import Settings from './Pages/Settings';
 import NewPost from './Pages/NewPost';
 import NewForm from './Pages/NewForm';
+import ViewForm from './Pages/ViewForm';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -29,6 +30,7 @@ function Routes() {
             <Route path="/Dashboard" component={Dashboard}/>
             <Route path="/capture-forms" component={CaptureForms}/>
             <Route path="/new-form" component={NewForm}/>
+            <Route path="/view-form" component={ViewForm}/>
             <Route path="/link-account" component={LinkAccount}/>
             <Route path="/new-post" component={NewPost}/>
             <Route path="/settings" component={Settings}/>

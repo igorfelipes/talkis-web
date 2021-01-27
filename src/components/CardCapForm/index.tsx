@@ -7,6 +7,10 @@ import './styles.css';
 
 function CardCapForm() {
 
+  const handleViewForm = () => {
+    window.location.href='/view-form'
+  }
+
   return (
     <div className="card-capture-form">
       <h1>Formulário lançamento loren ipsun</h1>
@@ -14,7 +18,7 @@ function CardCapForm() {
 
       <FaRegClipboard size={50}/>
       <div className="button-form">
-        <button type="submit" >Ver formulário</button>
+        <button type="submit" onClick={handleViewForm}>Ver formulário</button>
       </div>
 
       <hr/>
