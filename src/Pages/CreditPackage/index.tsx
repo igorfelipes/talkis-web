@@ -1,36 +1,14 @@
-import React, { useRef } from 'react';
-import { Form } from '@unform/web';
-import { FormHandles, SubmitHandler } from '@unform/core';
+import React from 'react';
 
 import Navbar from '../../components/Navbar';
 import PageBody from '../../components/PageBody';
 import Sidebar from '../../components/Sidebar';
-import Input from '../../components/Input';
 
-import imgPerfil from '../../assets/images/perfil.png';
-
-import { FaPen } from 'react-icons/fa';
 
 import './styles.css';
-import { Link } from 'react-router-dom';
 
-interface ProfileData {
-  firstname: string;
-  lastname: string;
-  email: string;
-}
-
-interface PasswordData {
-  oldPassword: string;
-  newPassword: string;
-  confirmPassword: string;
-}
 
 function CreditPackage() {
-
-  const formRef = useRef<FormHandles>(null);
-
-  
 
 
   return (
