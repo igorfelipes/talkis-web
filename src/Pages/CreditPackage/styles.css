@@ -1,0 +1,150 @@
+.main-container { 
+  display: flex;
+  background: var(--color-primary-light);
+  height: 87vh;
+}
+
+.credit-payment .page-body {
+  /* padding: 0; */
+  position: relative;
+}
+
+/* .credit-payment .top-header {
+  padding: 3rem 3.2rem;
+} */
+
+.credit-container{
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+.credit-container .credit-header {
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* margin-top: 1rem; */
+  flex-direction: column;
+}
+
+.credit-container .credit-header h1 {
+  font: 700 3rem Roboto;
+  color: #696969; 
+  opacity: .7;
+}
+
+.credit-container .credit-header p {
+  font: 500 1.8rem Roboto;
+  color: #696969; 
+  opacity: .7;
+  margin-top: .7rem;
+}
+
+.gradient-block {
+  /* padding-left: 10rem; */
+  height: 25rem;
+  margin-top: 17rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #b5a4f8, #eeafca);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 4rem;
+  /* align-items: flex-end; */
+}
+
+.gradient-block .wrapper-cards {
+  display: flex;
+  align-items: flex-end;
+  
+}
+
+.wrapper-cards .card-creditpay {
+    margin: -3rem 3rem 0 0rem;
+    height: 23.3rem;
+    width: 22.3rem;
+    background: var(--color-base);
+    border-radius: 2rem;
+    border: 1.4px solid var(--color-line-in-white);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: var(--color-base);
+    box-shadow: -2px 0px 23px -14px rgba(0,0,0,1);
+    cursor: pointer;
+}
+
+.wrapper-cards .card-creditpay h1 {
+  margin-top: 2rem;
+  font: 700 3rem Roboto;
+  color: #696969; 
+  opacity: .7;
+}
+
+.wrapper-cards .card-creditpay h2 {
+  margin-top: 2rem;
+  font: 700 5rem Roboto;
+  color:#9F47DF; 
+  /* opacity: .7; */
+}
+
+.wrapper-cards .card-creditpay p {
+  margin-top: 1rem;
+  font: 500 1.4rem Roboto;
+  color: #696969; 
+  opacity: .7;
+}
+
+.second {
+  height: 25.3rem !important;
+}
+.third{
+  height: 26.3rem !important;
+}
+.last{
+  height: 28.3rem !important;
+  box-shadow: 1px 0px 23px 1px rgba(238,175,202,0.62) !important;
+}
+
+.gradient-block .card-creditpay:last-child {
+  margin-right: 0;
+}
+
+.wrapper-cards .card-creditpay .value-block {
+  margin-top: 2rem;
+  font: 700 3rem Roboto;
+  color:#9F47DF; 
+  /* opacity: .7; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.wrapper-cards .card-creditpay .value-block h1 {
+  color:#9F47DF;
+  font: 700 5rem Roboto;
+  opacity: 1; 
+}
+
+.wrapper-cards .card-creditpay .value-block h2 {
+  margin: 4rem .7rem 0 0;
+  color:#9F47DF;
+  font: 700 3rem Roboto;
+  opacity: 1; 
+}
+
+
+.credit-container footer {
+  width: 100%;
+  font: 500 1rem Roboto;
+  margin-top: 34rem;
+  display: flex;
+  justify-content: center;
+}
+

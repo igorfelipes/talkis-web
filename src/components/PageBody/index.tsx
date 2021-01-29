@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { FaArrowLeft, FaLink, FaPlus, FaTrash } from 'react-icons/fa';
+import { FaArrowLeft,  FaLink, FaPlus, FaTrash, FaWallet } from 'react-icons/fa';
 // import addIcon from '../../assets/images/icons/add-white.svg';
 
 import './styles.css'
@@ -12,9 +12,10 @@ interface PageBodyProps {
     link?: string;
     newPost?: boolean;
     trash?: boolean;
+    creditPage?: boolean;
 }
 
-const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children, newPost, trash}) => {
+const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children, newPost, trash, creditPage}) => {
     return (
         // <div className="container">
             <article className="page-body">
@@ -45,6 +46,16 @@ const  PageBody: React.FC<PageBodyProps> = ({ title, link,  children, newPost, t
                                 </Link>
                             )}
                        </div>
+
+                       {creditPage && (
+                           <div className="credit-page">
+                               <FaWallet size={25}/>
+                               <div className="your-credits">
+                                   Seus créditos
+                                   <h1>12.250</h1>
+                               </div>
+                           </div>
+                       )}
                         
                     </div>
                 </header>

@@ -14,7 +14,7 @@ function Sidebar() {
         <Link to="/link-account"><FaRegCalendarAlt size={15}/> Agendamento</Link>
         <Link to="#"><FaRegSmile size={15} /> Atendimento</Link>
         <Link to="/capture-forms"><FaRegEnvelope size={15} /> Formulários</Link>
-        <Link to="#"><FaRegEnvelope size={15} /> Crédito</Link>
+        <Link to="/credit-package"><FaRegEnvelope size={15} /> Crédito</Link>
       </div>
       <div className="footer-sidebar">
         <Link to="/settings"><FaCog size={15} /> Configurações</Link>

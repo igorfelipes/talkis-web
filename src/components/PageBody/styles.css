@@ -73,7 +73,7 @@
 
 .page-body .top-bar-container svg {
     margin-left: 0.5rem ;
-    width: 2.4rem;
+    /* width: 2.4rem; */
 }
 
 .page-body .top-bar-container h1 {
@@ -102,5 +102,28 @@
 
 .wrap-title > svg {
     margin-left: 2rem !important; 
+}
+
+.credit-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3rem;
+    color: #5538C0;
+}
+
+.credit-page svg {
+    margin-right: 1.5rem;
+}
+
+.credit-page .your-credits {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.page-body .your-credits h1 {
+    margin-top: .7rem;
+    opacity: 1;
 }
 
