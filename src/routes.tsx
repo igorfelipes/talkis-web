@@ -14,6 +14,7 @@ import NewPost from './Pages/NewPost';
 import NewForm from './Pages/NewForm';
 import ViewForm from './Pages/ViewForm';
 import CreditPackage from './Pages/CreditPackage';
+import Payment from './Pages/Payment';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -34,7 +35,8 @@ function Routes() {
             <Route path="/view-form" component={ViewForm}/>
             <Route path="/link-account" component={LinkAccount}/>
             <Route path="/new-post" component={NewPost}/>
-            <Route path="/credit-package" component={CreditPackage}/>
+            <Route path="/credit-package" exact component={CreditPackage}/>
+            <Route path="/credit-package/payment" component={Payment}/>
             <Route path="/settings" component={Settings}/>
             <Route path="*" component={() => <h1>Page not found</h1>} />
         </Switch>

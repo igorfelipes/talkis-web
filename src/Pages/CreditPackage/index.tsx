@@ -10,6 +10,8 @@ import './styles.css';
 
 function CreditPackage() {
 
+  const handleCreditPay = () => window.location.href='/credit-package/payment'
+
 
   return (
     <div className="container">
@@ -26,7 +28,7 @@ function CreditPackage() {
             </div>
             <div className="gradient-block">
               <div className="wrapper-cards">
-                <div className="card-creditpay">
+                <div className="card-creditpay"onClick={handleCreditPay}>
                   <h1>2.500</h1>
                   <p>créditos</p>
                   <div className="value-block">
@@ -34,7 +36,7 @@ function CreditPackage() {
                   </div>
                   <p>*por mensagem</p>
                 </div>
-                <div className="card-creditpay second" >
+                <div className="card-creditpay second" onClick={handleCreditPay}>
                   <h1>5.000</h1>
                   <p>créditos</p>
                   <div className="value-block">
@@ -42,7 +44,7 @@ function CreditPackage() {
                   </div>
                   <p>*por mensagem</p> 
                 </div>
-                <div className="card-creditpay third">
+                <div className="card-creditpay third" onClick={handleCreditPay}>
                   <h1>10.000</h1>
                   <p>créditos</p> 
                   <div className="value-block">
@@ -50,7 +52,7 @@ function CreditPackage() {
                   </div>
                   <p>*por mensagem</p>
                 </div>
-                <div className="card-creditpay last">
+                <div className="card-creditpay last" onClick={handleCreditPay}>
                   <h1>50.000</h1>
                   <p>créditos</p>  
                   <div className="value-block">
