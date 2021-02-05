@@ -28,13 +28,13 @@
 
 .buttons-payment {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1.3rem;
   justify-content: space-between;
   width: 75%;
 }
 
 .buttons-payment button {
-  height: 5rem;
+  height: 6rem;
   width: 21rem;
   background: var(--color-base);
   border: 1.5px solid  #5538C0;
@@ -69,7 +69,7 @@
   color: #696969;
   justify-self: flex-start;
   align-self: flex-end;
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
 }
 
 
@@ -80,7 +80,7 @@
   color: #696969;
 }
 
-.resume-payment h1 {
+.resume-payment > h1 {
   opacity: .7;
   font: 600 1.4rem Roboto;
   margin-bottom: 2rem;
@@ -92,6 +92,8 @@
   color: var(--color-base);
   border-radius: 1.4rem ;
   width: 90%;
+  display: flex;
+  flex-direction: column;
 }
 
 .resume-payment .button-container {
@@ -103,3 +105,37 @@
   font: 400 2rem Roboto;
   background: linear-gradient(to right, #df5f96 0%, #694af3 100%) !important;
 }
+
+.resume-payment .credit-price {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  height: 45%;
+  width: 85%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.resume-payment .credit-price h1 {
+  font: 500 2.1rem Roboto;
+  color: white !important;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+}
+
+.resume-payment .credit-price h1:nth-child(2) {
+  font: 300 2.1rem Roboto;
+}
+
+.resume-payment .credit-data {
+  padding: 2rem 3rem;
+}
+
+.resume-payment .credit-data p {
+  font: 400 1.2rem Roboto;
+  opacity: .9;
+}
+.resume-payment .credit-data > p{
+  margin-bottom: 1rem;
+}
+
+

@@ -90,6 +90,14 @@ function Payment() {
             <div className="resume-payment">
               <h1>Resumo da compra</h1>
               <div className="credit-block">
+                <div className="credit-price">
+                  <h1>50.000 Créditos</h1>
+                  <h1>R$ 98,90</h1>
+                </div>
+                <div className="credit-data">
+                  <p>Murilo Santos</p>
+                  <p>012.778.122-02</p>
+                </div>
 
               </div>
               <div className="button-container">
