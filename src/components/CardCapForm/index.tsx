@@ -16,7 +16,9 @@ function CardCapForm() {
       <h1>Formulário lançamento loren ipsun</h1>
       <hr/>
 
-      <FaRegClipboard size={50}/>
+      <div className="clip-container">
+        <FaRegClipboard size={45}/>
+      </div>
       <div className="button-form">
         <button type="submit" onClick={handleViewForm}>Ver formulário</button>
       </div>

@@ -24,11 +24,12 @@
 }
 
 .top-links {
+  margin-top: 2rem;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3rem 5rem;
+  flex-wrap: wrap;
+  height: 90%;
+  overflow-y: scroll;
+  justify-content: center;
 }
 
 .twitter {
@@ -41,4 +42,21 @@
 
 .gmn {
   background: #4f8ef6 !important;
+}
+
+.pinterest {
+  background: #d0302b !important;
+  margin-left: 0 !important;
+}
+
+.linkedin {
+  background: #3279aa !important;
+}
+
+.youtube {
+  background: #ed3833 !important;
+}
+
+.analytics {
+  background: #f07a39 !important;
 }

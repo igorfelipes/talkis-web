@@ -21,6 +21,10 @@ function CaptureForms() {
             <CardCapForm />
             <CardCapForm />
             <CardCapForm />
+            <CardCapForm />
+            <CardCapForm />
+            <CardCapForm />
+            <CardCapForm />
           </div>
         </PageBody>
       </div>
