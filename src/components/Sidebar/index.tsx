@@ -12,7 +12,7 @@ function Sidebar() {
       <div className="header-sidebar">
         <Link to="/dashboard"><FaColumns size={15}/>Dashboard</Link>
         <Link to="/link-account"><FaRegCalendarAlt size={15}/> Agendamento</Link>
-        <Link to="#"><FaRegSmile size={15} /> Atendimento</Link>
+        <Link to="/attendance"><FaRegSmile size={15} /> Atendimento</Link>
         <Link to="/capture-forms"><FaRegEnvelope size={15} /> Formulários</Link>
         <Link to="/credit-package"><FaRegEnvelope size={15} /> Crédito</Link>
       </div>

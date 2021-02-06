@@ -15,6 +15,7 @@ import NewForm from './Pages/NewForm';
 import ViewForm from './Pages/ViewForm';
 import CreditPackage from './Pages/CreditPackage';
 import Payment from './Pages/Payment';
+import Attendance from './Pages/Attendance';
 
 
 // const PrivateRoute = ({...rest}) => {
@@ -35,6 +36,7 @@ function Routes() {
             <Route path="/view-form" component={ViewForm}/>
             <Route path="/link-account" component={LinkAccount}/>
             <Route path="/new-post" component={NewPost}/>
+            <Route path="/attendance" component={Attendance}/>
             <Route path="/credit-package" exact component={CreditPackage}/>
             <Route path="/credit-package/payment" component={Payment}/>
             <Route path="/settings" component={Settings}/>
