@@ -6,7 +6,7 @@
 
 .chat {
   display: grid;
-  grid-template-columns: 30fr 70fr;
+  grid-template-columns: 35fr 65fr;
   grid-template-areas: 
           "talkis-messages conversation"
  ;
@@ -138,6 +138,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .send-message .buttons-container > button {
@@ -147,6 +148,6 @@
 } 
 
 .send-message .buttons-container :nth-child(2){
-  width: 8rem;
+  width: 10rem;
   margin-left: 1rem;
 }
