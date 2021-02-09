@@ -121,6 +121,7 @@
   border-radius: 3rem;
   background: #f0f0f0;
   height: 4rem;
+  margin-top: 0;
 }
 
 .send-message .buttons-container {
