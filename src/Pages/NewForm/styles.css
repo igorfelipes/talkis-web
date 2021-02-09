@@ -51,6 +51,13 @@
   height: 90%;
 }
 
+.newform-container form {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
 .form-block {
   margin: 0 3rem 3rem 3rem;
   background: var(--color-base);
@@ -64,12 +71,107 @@
   justify-content: space-between; */
   box-shadow: var(--panel-shadow);
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-block h1 {
   margin-top: 2.3rem;
-  font: 600 2.1rem Roboto;
+  font: 600 2.13rem Source Sans Pro;
   opacity: 0.5;
 }
 
+.form-block .input-block  {
+  width: 80%;
+}
+
+.form-block .input-block input {
+  margin-top: 1.4rem;
+  height: 4rem;
+  width: 100%;
+  box-shadow: none;
+  border: 1px solid #D7DAE2;
+  border-radius: 0.5rem;
+}
+
+/* .input-with-value{
+  border: 1px solid #5538c0;
+} */
+
+.form-block .input-block input::-webkit-input-placeholder {
+  font: 400 1.3rem Noto Sans;
+  color: #4D565C;/*Change the opacity between 0 and 1*/
+  opacity: 1;
+}
+
+.form-block .input-block + .input-block {
+  margin-top: 0;
+}
+
+.form-block .select-block  {
+  width: 80%;
+}
+
+.form-block .select-block select {
+  margin-top: 1.4rem;
+  height: 4rem;
+  width: 100%;
+  box-shadow: none;
+  border: 1px solid #D7DAE2;
+  border-radius: 0.5rem;
+  font: 400 1.3rem Noto Sans;
+}
+
+.form-block .save-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.form-block .save-block button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-line-in-white);
+  font: 600 1.4rem Source Sans Pro;
+  background: #5538c0;
+  width: 9rem;
+  height: 3.3rem;
+  border: none;
+  border-radius: 2rem;
+}
+
+.form-block .field-form {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.form-block .field-form .input-block {
+  width: 15%;
+}
+
+.form-block .fields-name {
+  width: 80%;
+  height: 4rem;
+  border: 3px dashed #d3d4d9;
+  border-radius: 0.5rem;
+  align-self: flex-end;
+  justify-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 2rem;
+  font: 400 1.3rem Noto Sans;
+}
+
+
+/* checkbox */
+
+.form-block .input-block input[type="checkbox"]{
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
