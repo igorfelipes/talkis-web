@@ -57,7 +57,7 @@ function Login() {
           login(userData.token);
           dispatch(setUser(userData));
 
-          history.push('/document');
+          history.push('/dashboard');
         }
 
       }).catch((err) => {
