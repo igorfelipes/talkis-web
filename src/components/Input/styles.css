@@ -32,3 +32,13 @@
 .input-block input::-webkit-input-placeholder {
   opacity: 0.5; /*Change the opacity between 0 and 1*/
 }
+
+
+.input-block span {
+  font: 600 1.4rem Noto Sans;
+  color:rgb(235, 146, 146);
+}
+
+.input-block h4 {
+  margin-top: .7rem;
+}

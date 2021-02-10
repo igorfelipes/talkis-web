@@ -1,74 +1,80 @@
 import React, { useRef } from 'react';
 import { FormHandles, SubmitHandler } from '@unform/core';
 import { Form } from '@unform/web';
-import { Link } from 'react-router-dom';
-// import { useHistory } from 'react-router-dom';
-// import * as Yup from 'yup';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import * as Yup from 'yup';
 
 import Input from '../../components/Input';
-// import SaveForm from '../../components/SaveForm';
 
-// import api from '../../services/api';
-// import { login } from '../../services/auth';
-// import { errorLogin } from '../../utils/Notifications';
+import api from '../../services/api';
+import { login } from '../../services/auth';
+
+import logotipo from '../../assets/images/icons/logo-xm.png';
 
 import './styles.css';
-import logotipo from '../../assets/images/icons/logo-xm.png';
+import { User } from '../../store/modules/user/types';
+import { setUser } from '../../store/modules/user/actions';
+import { ApplicationState } from '../../store';
 // import { User } from '../../store/modules/login/types';
 // import { setUser } from '../../store/modules/login/actions';
-// import { useDispatch } from 'react-redux';
 
 
 interface LoginData {
-  username: string;
+  email: string;
   password: string;
 }
 
 function Login() {
 
-  // const dispatch = useDispatch()
-  // const history = useHistory();
+  const dispatch = useDispatch()
+  const history = useHistory();
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit: SubmitHandler<LoginData> = async data => {
 
-    console.log('submit handle')
-    window.location.href='/dashboard'
-    // try{
-    //   formRef.current?.setErrors({})
+    console.log('submit handle') 
 
-    //   const schemaDoc = Yup.object().shape({        
-    //           username: Yup.string().required('Por favor, digite o nome de usuário'),
-    //           password: Yup.string().required('Por favor, digite a senha'),
-    //     })
+    // window.location.href='/dashboard'
+    try{
+      formRef.current?.setErrors({})
 
-    //   await schemaDoc.validate(data, {
-    //     abortEarly: false,
-    //   })
+      const schemaDoc = Yup.object().shape({        
+              email: Yup.string().required('Por favor, digite o email do usuário'),
+              password: Yup.string().required('Por favor, digite a senha'),
+        })
+
+      await schemaDoc.validate(data, {
+        abortEarly: false,
+      })
        
-    //   api.post('sessions/', data).then((response) =>{    
-    //     const userData: User = response.data;
+      api.post('session/', data).then((response) =>{    
+        const userData: User = response.data;
         
-    //     console.log(userData)
+        console.log(userData)
 
-    //     if(userData.token){
-    //       login(userData.token);
-    //       dispatch(setUser(userData));
+        if(userData.token){
+          login(userData.token);
+          dispatch(setUser(userData));
 
-    //       history.push('/document');
-    //     }
+          history.push('/document');
+        }
 
-    //   }).catch((err) => {
-    //     errorLogin()
-    //   })
+      }).catch((err) => {
+        console.log(err)
+      })
 
-    // }catch(err){
-    //   if(err instanceof Yup.ValidationError){
-    //       err.inner.forEach( error => {
-    //           formRef.current?.setFieldError(error.path, error.message)
-    //         }) 
-    //   } 
-    // }
+    }catch(err){
+      if(err instanceof Yup.ValidationError){
+          err.inner.forEach( error => {
+              // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+              error.path ? 
+                formRef.current?.setFieldError(error.path, error.message) 
+                : undefined
+             
+            }) 
+      } 
+    }
   }
 
   return (

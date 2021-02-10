@@ -27,7 +27,7 @@ const Input: React.FC<InputProps> = ({ label, name, ...rest }) => {
     <div className="input-block">
       <label htmlFor={ name }>{ label }</label>
       <input ref={inputRef} id={ name } { ...rest } defaultValue={defaultValue} />
-      { error && <span style={{color:'#f00'}}>{error}</span>}
+      { error && <span ><h4>{error}</h4></span>}
     </div>
 
   );
