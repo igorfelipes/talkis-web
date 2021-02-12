@@ -2,7 +2,7 @@ export enum UsersTypes {
   GET_USER = 'USER/GET_USER',
   SET_USER = 'USER/SET_USER',
   RESET_USER = 'USER/RESET_USER',
-  UPDATE_PATH_USER = 'USER/UPDATE_PATH_USER',
+  ERROR_LOGIN= 'ERROR_LOGIN',
 }
 
 export interface User {

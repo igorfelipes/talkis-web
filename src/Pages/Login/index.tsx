@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FormHandles, SubmitHandler } from '@unform/core';
 import { Form } from '@unform/web';
 import { Link, useHistory } from 'react-router-dom';
@@ -14,7 +14,7 @@ import logotipo from '../../assets/images/icons/logo-xm.png';
 
 import './styles.css';
 import { User } from '../../store/modules/user/types';
-import { setUser } from '../../store/modules/user/actions';
+import { getUser, setErrorLogin, setUser } from '../../store/modules/user/actions';
 import { ApplicationState } from '../../store';
 // import { User } from '../../store/modules/login/types';
 // import { setUser } from '../../store/modules/login/actions';
@@ -30,6 +30,12 @@ function Login() {
   const dispatch = useDispatch()
   const history = useHistory();
   const formRef = useRef<FormHandles>(null);
+  const { user } = useSelector( (state: ApplicationState) => state);
+  
+  // useEffect(()=>{
+  //   dispatch(getUser())
+      
+  // }, [dispatch])
 
   const handleSubmit: SubmitHandler<LoginData> = async data => {
 
@@ -62,6 +68,7 @@ function Login() {
 
       }).catch((err) => {
         console.log(err)
+        dispatch(setErrorLogin())
       })
 
     }catch(err){
@@ -85,7 +92,7 @@ function Login() {
             <div className="logotipo">
              <img src={logotipo} alt="logo-talkis"/>
             </div>
-            
+            {user.error?<span className="error"><h4>Email ou senha não cadastrados, tente novamente!</h4></span>: ''}
             <Form onSubmit={handleSubmit} ref={formRef}>
               <Input name="email" label="Email" placeholder="Digite seu e-mail"></Input>
               <Input name="password" label="Senha" type="password" placeholder="Digite sua senha"></Input>

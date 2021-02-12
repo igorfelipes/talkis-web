@@ -17,7 +17,16 @@ const reducer: Reducer<UsersState> = ( state = INITIAL_STATE, action): UsersStat
       return { ...state, data: data };
     case UsersTypes.GET_USER:
       console.log('REDUCER - GET_USER', state)
-      return { ...state };  
+      return { ...state }; 
+    
+    case UsersTypes.ERROR_LOGIN:
+      console.log('REDUCER - ERROR_LOGIN', state)
+      return { 
+        data: undefined,
+        error: true,
+        loading:false,
+      };
+
     case UsersTypes.RESET_USER:
       console.log('REDUCER - RESET_USER')
       return { 
@@ -28,7 +37,7 @@ const reducer: Reducer<UsersState> = ( state = INITIAL_STATE, action): UsersStat
       };
       
     default:
-      return {...state, error: true}
+      return {...state }
   }
 }
 
