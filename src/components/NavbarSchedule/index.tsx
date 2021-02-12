@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { FaPlusCircle, FaRegCalendarAlt, FaSyncAlt } from 'react-icons/fa'
 
@@ -10,30 +10,30 @@ function NavbarSchedule() {
 
   return (
     <section className="section-bar">
-      <Link   to="/link-account">
+      <NavLink   to="/link-account" activeClassName="selected-navbar-schedule">
         <FaSyncAlt size={24}/>
         Vincular Conta
-      </Link >
-      <Link  to="/new-post">
+      </NavLink >
+      <NavLink  to="/new-post"  activeClassName="selected-navbar-schedule">
         <FaPlusCircle size={24}/>
         Novo Post
-      </Link >
-      <Link  to="#">
+      </NavLink >
+      <NavLink  to="/calendar"  activeClassName="selected-navbar-schedule">
         <FaRegCalendarAlt size={24}/>
         Calendário
-      </Link >
-      <Link  to="#">
+      </NavLink >
+      <NavLink  to="loren-1"  activeClassName="selected-navbar-schedule">
         <FaRegCalendarAlt size={24}/>
         Loren Ipsun
-      </Link >
-      <Link  to="#">
+      </NavLink >
+      <NavLink  to="/loren-2" activeClassName="selected-navbar-schedule">
         <FaRegCalendarAlt size={24}/>
         Loren Ipsun
-      </Link >
-      <Link  to="#">
+      </NavLink >
+      <NavLink  to="/loren-3" activeClassName="selected-navbar-schedule">
         <FaRegCalendarAlt size={24}/>
         Loren Ipsun
-      </Link >
+      </NavLink >
     </section>
   )
 }

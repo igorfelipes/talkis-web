@@ -36,3 +36,9 @@
   color: var(--color-base);
   border-radius: 1.6rem;
 }
+
+.selected-navbar-schedule {
+  background-color: #5538c0!important;
+  color: var(--color-base) !important;
+  border-radius: 1.6rem !important;
+}

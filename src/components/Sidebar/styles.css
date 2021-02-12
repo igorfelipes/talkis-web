@@ -49,7 +49,16 @@
   border-radius: 50rem;
   opacity: 0;
 }
+
 .sidebar a:hover::after{opacity:1}
+
+
+.selected::after{opacity: 1 !important;}
+.selected {
+  color:#9F47DF!important;
+  font: 700 1.4rem Archivo !important;
+}
+
 
 .sidebar a:hover {
   color:#9F47DF;
