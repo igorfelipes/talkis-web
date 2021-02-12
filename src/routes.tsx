@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -17,10 +17,12 @@ import CreditPackage from './Pages/CreditPackage';
 import Payment from './Pages/Payment';
 import Attendance from './Pages/Attendance';
 
+import { isAuthenticated } from './services/auth';
 
-// const PrivateRoute = ({...rest}) => {
-//     return isAuthenticated() ? <Route {...rest}/> : <Redirect to="/login"/>
-// }
+
+const PrivateRoute = ({...rest}) => {
+    return isAuthenticated() ? <Route {...rest}/> : <Redirect to="/login"/>
+}
 
 
 function Routes() {
@@ -30,17 +32,17 @@ function Routes() {
             <Route path="/login" component={Login}/>
             <Route path="/forgot-password" component={ForgotPassword}/>
             <Route path="/mail-sent" component={MailSent}/>
-            <Route path="/Dashboard" component={Dashboard}/>
-            <Route path="/capture-forms" component={CaptureForms}/>
-            <Route path="/new-form" component={NewForm}/>
-            <Route path="/view-form" component={ViewForm}/>
-            <Route path="/link-account" component={LinkAccount}/>
-            <Route path="/new-post" component={NewPost}/>
-            <Route path="/attendance" component={Attendance}/>
-            <Route path="/credit-package" exact component={CreditPackage}/>
-            <Route path="/credit-package/payment" component={Payment}/>
-            <Route path="/settings" component={Settings}/>
-            <Route path="*" component={() => <h1>Page not found</h1>} />
+            <PrivateRoute path="/Dashboard" component={Dashboard}/>
+            <PrivateRoute path="/capture-forms" component={CaptureForms}/>
+            <PrivateRoute path="/new-form" component={NewForm}/>
+            <PrivateRoute path="/view-form" component={ViewForm}/>
+            <PrivateRoute path="/link-account" component={LinkAccount}/>
+            <PrivateRoute path="/new-post" component={NewPost}/>
+            <PrivateRoute path="/attendance" component={Attendance}/>
+            <PrivateRoute path="/credit-package" exact component={CreditPackage}/>
+            <PrivateRoute path="/credit-package/payment" component={Payment}/>
+            <PrivateRoute path="/settings" component={Settings}/>
+            <PrivateRoute path="*" component={() => <h1>Page not found</h1>} />
         </Switch>
     )
 }
