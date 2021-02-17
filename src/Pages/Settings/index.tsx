@@ -1,6 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles, SubmitHandler } from '@unform/core';
+import { ApplicationState } from '../../store';
+import { useDispatch, useSelector } from 'react-redux';
+import * as Yup from 'yup';
+
+import { Link } from 'react-router-dom';
 
 import Navbar from '../../components/Navbar';
 import PageBody from '../../components/PageBody';
@@ -11,14 +17,12 @@ import imgPerfil from '../../assets/images/perfil.png';
 
 import { FaPen } from 'react-icons/fa';
 
-import './styles.css';
-import { Link } from 'react-router-dom';
+import { updateUser } from '../../store/modules/user/actions';
+import { ProfileData } from '../../store/modules/user/types';
+import api from '../../services/api';
 
-interface ProfileData {
-  firstname: string;
-  lastname: string;
-  email: string;
-}
+import './styles.css';
+
 
 interface PasswordData {
   oldPassword: string;
@@ -28,12 +32,56 @@ interface PasswordData {
 
 function Settings() {
 
+  const dispatch = useDispatch()
   const formRef = useRef<FormHandles>(null);
 
+  const { user } = useSelector( (state: ApplicationState) => state); 
+
   
-  const handleSubmit: SubmitHandler<ProfileData> = async data => {
+  const handleChangeProfile: SubmitHandler<ProfileData> = async data => {
 
     console.log('submit handle')
+
+     try{
+        formRef.current?.setErrors({});
+
+        const schemaDoc = Yup.object().shape({        
+            first_name: Yup.string().required('O nome é obrigatório'),
+            last_name: Yup.string().required('O nome é obrigatório'),
+            email: Yup.string().required('O email é obrigatório'),
+          })
+  
+        await schemaDoc.validate(data, {
+          abortEarly: false,
+        })
+
+
+
+
+        api.put(`user/${user.data?.user?.id}`, data).then((res) =>{
+
+          console.log('UPDATE SUCCESSFULL')
+          alert('UPDATE SUCCESSFULL')
+
+          dispatch(updateUser(data));
+        }).catch((err) => {
+          console.log(err)
+          // alert('UPDATE FAILED')
+        })
+
+
+        console.log(data)
+        
+      }catch(err){
+        if(err instanceof Yup.ValidationError){
+
+          err.inner.forEach( error => {
+              error.path ? 
+              formRef.current?.setFieldError(error.path, error.message) 
+              : undefined
+          })   
+        }
+      }
     
   }
   const handleChangePassword: SubmitHandler<PasswordData> = async data => {
@@ -66,14 +114,14 @@ function Settings() {
             </div>
 
             <div className="user-data">
-              <Form onSubmit={handleSubmit} ref={formRef}>
+              <Form onSubmit={handleChangeProfile} ref={formRef} initialData={user.data?.user}>
                 <div className="username-block">
-                  <Input name="firstname" label="Usuário" value="Igor"/>
-                  <Input name="lastname" label="&nbsp;" value="Sales"/>
+                  <Input name="first_name" label="Usuário" />
+                  <Input name="last_name" label="&nbsp;" />
                 </div>
 
                 <div className="email-block">
-                  <Input name="email" label="Email" value="igor@acutistecnologia.com.br"/>
+                  <Input name="email" label="Email" />
                   <div className="button-container">
                     <button type="submit" >Salvar</button>
                   </div>

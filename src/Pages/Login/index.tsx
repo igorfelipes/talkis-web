@@ -56,6 +56,7 @@ function Login() {
 
         if(userData.token){
           login(userData.token);
+          console.log(userData)
           dispatch(setUser(userData));
 
           history.push('/dashboard');

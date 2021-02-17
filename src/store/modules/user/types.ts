@@ -3,17 +3,25 @@ export enum UsersTypes {
   SET_USER = 'USER/SET_USER',
   RESET_USER = 'USER/RESET_USER',
   ERROR_LOGIN= 'ERROR_LOGIN',
+  UPDATE_USER= 'UPDATE_USER',
 }
 
 export interface User {
   user: {
     id: number;
-    username: string;
-    name: string
+    first_name: string;
+    last_name: string;
     email: string;
   } | undefined,
   token: string;
 };
+
+
+export interface ProfileData {
+  firstname: string;
+  lastname: string;
+  email: string;
+}
 
 export interface Login {
   email: string;

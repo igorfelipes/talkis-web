@@ -13,12 +13,13 @@ import './styles.css';
 function Navbar() {
 
   const dispatch = useDispatch()
+
   const { user } = useSelector( (state: ApplicationState) => state);
   
   useEffect(()=>{
     dispatch(getUser())
-      
-  }, [dispatch])
+    console.log(user)  
+  }, [dispatch, user])
 
   return (
     <div className="navbar ">
@@ -26,7 +27,8 @@ function Navbar() {
       <img src={logotipo} alt="logo-talkis"/>
 
       <div className="left-content">
-        <label htmlFor="perfil">{user.data? user.data.user?.name : undefined}</label>
+        { console.log(user.data)}
+        <label htmlFor="perfil">{user.data?.user ? user.data.user.first_name + user.data.user.last_name: undefined}</label>
         <img src={imgPerfil} alt="img-perfil"/>
       </div>
 

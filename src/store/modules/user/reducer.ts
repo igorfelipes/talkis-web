@@ -18,6 +18,10 @@ const reducer: Reducer<UsersState> = ( state = INITIAL_STATE, action): UsersStat
     case UsersTypes.GET_USER:
       console.log('REDUCER - GET_USER', state)
       return { ...state }; 
+
+    case UsersTypes.UPDATE_USER:
+      console.log('REDUCER - UPDATE_USER', state)
+      return { ...state, data: data }; 
     
     case UsersTypes.ERROR_LOGIN:
       console.log('REDUCER - ERROR_LOGIN', state)
