@@ -18,9 +18,9 @@ export interface User {
 
 
 export interface ProfileData {
-  firstname: string;
-  lastname: string;
-  email: string;
+    first_name: string;
+    last_name: string;
+    email: string; 
 }
 
 export interface Login {
@@ -30,6 +30,7 @@ export interface Login {
 
 export interface UsersState {
   readonly data: User | undefined;
+  readonly profile_data: ProfileData | undefined;
   readonly loading: boolean;
   readonly error: boolean;
 }

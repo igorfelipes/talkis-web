@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles, SubmitHandler } from '@unform/core';
 import { ApplicationState } from '../../store';
@@ -17,7 +17,7 @@ import imgPerfil from '../../assets/images/perfil.png';
 
 import { FaPen } from 'react-icons/fa';
 
-import { updateUser } from '../../store/modules/user/actions';
+import { getUser, updateUser } from '../../store/modules/user/actions';
 import { ProfileData } from '../../store/modules/user/types';
 import api from '../../services/api';
 
@@ -36,6 +36,11 @@ function Settings() {
   const formRef = useRef<FormHandles>(null);
 
   const { user } = useSelector( (state: ApplicationState) => state); 
+
+  useEffect(()=>{
+    dispatch(getUser())
+    
+}, [dispatch, user.profile_data])
 
   
   const handleChangeProfile: SubmitHandler<ProfileData> = async data => {
@@ -87,6 +92,48 @@ function Settings() {
   const handleChangePassword: SubmitHandler<PasswordData> = async data => {
 
     console.log('Handle Change Password')
+
+    
+    try{
+      formRef.current?.setErrors({});
+
+      const schemaDoc = Yup.object().shape({        
+          oldPassword: Yup.string().required('Campo obrigatório'),
+          newPassword: Yup.string().required('Campo obrigatório'),
+          confirmPassword: Yup.string().oneOf([Yup.ref('newPassword'), null], 'Password must match'),
+        })
+
+      await schemaDoc.validate(data, {
+        abortEarly: false,
+      })
+
+
+
+
+      api.put(`user/${user.data?.user?.id}`, data).then((res) =>{
+
+        console.log('UPDATE SUCCESSFULL')
+        alert('UPDATE SUCCESSFULL')
+
+        // dispatch(updateUser(data));
+      }).catch((err) => {
+        console.log(err)
+        // alert('UPDATE FAILED')
+      })
+
+
+      console.log(data)
+      
+    }catch(err){
+      if(err instanceof Yup.ValidationError){
+
+        err.inner.forEach( error => {
+            error.path ? 
+            formRef.current?.setFieldError(error.path, error.message) 
+            : undefined
+        })   
+      }
+    }
     
   }
 
@@ -107,14 +154,21 @@ function Settings() {
                   </Link>
                   <img src={imgPerfil} alt="img-perfil"/>
               </div>
-              <label htmlFor="perfil">Igor Sales</label>
+              <label htmlFor="perfil">
+                {user.profile_data? 
+                  user.profile_data.first_name + user.profile_data.last_name 
+                  : '' }
+              </label>
+              {console.log('PROFILE_DATA', user.profile_data)}
               <div className="button-remove">
                 <button type="submit" >Remover</button>
               </div>
             </div>
 
             <div className="user-data">
-              <Form onSubmit={handleChangeProfile} ref={formRef} initialData={user.data?.user}>
+              { console.log('Carregando')}
+               {console.log(user.data?.user)}
+              <Form onSubmit={handleChangeProfile} ref={formRef} initialData={user.profile_data}>
                 <div className="username-block">
                   <Input name="first_name" label="Usuário" />
                   <Input name="last_name" label="&nbsp;" />

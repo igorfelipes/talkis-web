@@ -18,8 +18,7 @@ function Navbar() {
   
   useEffect(()=>{
     dispatch(getUser())
-    console.log(user)  
-  }, [dispatch, user])
+  }, [dispatch])
 
   return (
     <div className="navbar ">
@@ -28,7 +27,12 @@ function Navbar() {
 
       <div className="left-content">
         { console.log(user.data)}
-        <label htmlFor="perfil">{user.data?.user ? user.data.user.first_name + user.data.user.last_name: undefined}</label>
+        <label htmlFor="perfil">
+          {user.profile_data ?
+            user.profile_data.first_name + user.profile_data.last_name :
+            ''
+          }
+        </label>
         <img src={imgPerfil} alt="img-perfil"/>
       </div>
 
