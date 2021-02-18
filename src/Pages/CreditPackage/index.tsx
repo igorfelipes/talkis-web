@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Navbar from '../../components/Navbar';
 import PageBody from '../../components/PageBody';
@@ -10,7 +11,9 @@ import './styles.css';
 
 function CreditPackage() {
 
-  const handleCreditPay = () => window.location.href='/credit-package/payment'
+  const handleCreditPay = () => {
+    console.log('handle credit')
+  }
 
 
   return (
@@ -28,38 +31,38 @@ function CreditPackage() {
             </div>
             <div className="gradient-block">
               <div className="wrapper-cards">
-                <div className="card-creditpay"onClick={handleCreditPay}>
+                <Link className="card-creditpay" to='/credit-package/payment' onClick={handleCreditPay}>
                   <h1>2.500</h1>
                   <p>créditos</p>
                   <div className="value-block">
                    <h2>R$</h2><h1>0,14</h1>
                   </div>
                   <p>*por mensagem</p>
-                </div>
-                <div className="card-creditpay second" onClick={handleCreditPay}>
+                </Link>
+                <Link className="card-creditpay second"to='/credit-package/payment' onClick={handleCreditPay}>
                   <h1>5.000</h1>
                   <p>créditos</p>
                   <div className="value-block">
                    <h2>R$</h2><h1>0,10</h1>
                   </div>
                   <p>*por mensagem</p> 
-                </div>
-                <div className="card-creditpay third" onClick={handleCreditPay}>
+                </Link>
+                <Link className="card-creditpay third" to='/credit-package/payment' onClick={handleCreditPay}>
                   <h1>10.000</h1>
                   <p>créditos</p> 
                   <div className="value-block">
                    <h2>R$</h2><h1>0,07</h1>
                   </div>
                   <p>*por mensagem</p>
-                </div>
-                <div className="card-creditpay last" onClick={handleCreditPay}>
+                </Link>
+                <Link className="card-creditpay last" to='/credit-package/payment' onClick={handleCreditPay}>
                   <h1>50.000</h1>
                   <p>créditos</p>  
                   <div className="value-block">
                    <h2>R$</h2><h1>0,05</h1>
                   </div>
                   <p>*por mensagem</p> 
-                </div>
+                </Link>
               </div>
               
             </div>
