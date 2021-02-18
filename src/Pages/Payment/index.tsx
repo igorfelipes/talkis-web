@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles, SubmitHandler } from '@unform/core';
 
@@ -14,6 +14,7 @@ import { FaBarcode, FaPen, FaRegCreditCard } from 'react-icons/fa';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import Select from '../../components/Select';
+import { formatarCampo } from '../../utils/masks';
 
 interface ProfileData {
   firstname: string;
@@ -38,6 +39,8 @@ const optionsStates = [
 function Payment() {
 
   const formRef = useRef<FormHandles>(null);
+  const [fullName, setFullName] = useState('');
+  const [CPF_CNPJ, setCPF_CNPJ] = useState('');
 
   
   const handleSubmit: SubmitHandler<ProfileData> = async data => {
@@ -45,10 +48,15 @@ function Payment() {
     console.log('submit handle')
     
   }
-  const handleChangePassword: SubmitHandler<PasswordData> = async data => {
 
-    console.log('Handle Change Password')
+  const handleChangeFullName = (e: React.ChangeEvent<HTMLInputElement>)  => {
+    setFullName(e.target.value)
+    console.log(fullName)
     
+  }
+  const handleChangeCPF = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCPF_CNPJ(formatarCampo(e.target.value))
+    console.log(CPF_CNPJ)
   }
 
   return (
@@ -73,11 +81,11 @@ function Payment() {
               <Form onSubmit={handleSubmit} ref={formRef}>
 
                 <div className="viewform-block">
-                  <Input name="name" label="Nome completo" />
+                  <Input name="name" label="Nome completo" onChange={handleChangeFullName} />
                   <Input name="address" label="Endereço" />
                 </div>
                 <div className="viewform-block">
-                  <Input name="cpfOrCnpj" label="CPF/CNPJ" />
+                  <Input name="cpfOrCnpj" label="CPF/CNPJ" onChange={handleChangeCPF} value={CPF_CNPJ}/>
                   <Input name="complement" label="Complemento" />
                 </div>
                 <div className="viewform-block">
@@ -95,8 +103,8 @@ function Payment() {
                   <h1>R$ 98,90</h1>
                 </div>
                 <div className="credit-data">
-                  <p>Murilo Santos</p>
-                  <p>012.778.122-02</p>
+                  <p>{fullName}</p>
+                  <p>{CPF_CNPJ}</p>
                 </div>
 
               </div>
