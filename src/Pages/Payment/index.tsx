@@ -107,15 +107,15 @@ function Payment() {
                   { screen.payment === paymentPage.Cartao? '' : <Input name="complement" label="Complemento" />}
                   
                 </div>
-                <div className="viewform-block">
-                  <Input name="email" label="Email"/>
-                </div>
+
                 { screen.payment === paymentPage.Cartao?                 
                     <div className="viewform-block">
                       <Input name="dueData" label="Data de Vencimento" />
                       <Input name="securityCode" label="Código de segurança" />
                     </div> 
-                  : ''
+                  : <div className="viewform-block">
+                      <Input name="email" label="Email"/>
+                    </div>
                 }
 
               </Form>
