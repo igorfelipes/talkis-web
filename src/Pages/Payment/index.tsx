@@ -1,20 +1,24 @@
 import React, { useRef, useState } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles, SubmitHandler } from '@unform/core';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Navbar from '../../components/Navbar';
 import PageBody from '../../components/PageBody';
 import Sidebar from '../../components/Sidebar';
 import Input from '../../components/Input';
 
-import imgPerfil from '../../assets/images/perfil.png';
+import { formatarCampo } from '../../utils/masks';
+import { ApplicationState } from '../../store';
 
-import { FaBarcode, FaPen, FaRegCreditCard } from 'react-icons/fa';
+import { FaBarcode, FaRegCreditCard } from 'react-icons/fa';
 
 import './styles.css';
-import { Link } from 'react-router-dom';
-import Select from '../../components/Select';
-import { formatarCampo } from '../../utils/masks';
+import { paymentPage } from '../../store/modules/screen/types';
+import { setPaymentOption } from '../../store/modules/screen/actions';
+
+
+
 
 interface ProfileData {
   firstname: string;
@@ -22,23 +26,14 @@ interface ProfileData {
   email: string;
 }
 
-interface PasswordData {
-  oldPassword: string;
-  newPassword: string;
-  confirmPassword: string;
-}
-
-const optionsStates = [
-  { value: 1, label: 'Canais'},
-  { value: 2, label: 'Canal 1'},
-  { value: 3, label: 'Canal 2'},
-  { value: 4, label: 'Canal 3'},
-  { value: 5, label: 'Canal 4'},
-]
 
 function Payment() {
 
+  const { screen } = useSelector( (state: ApplicationState) => state); 
+  
   const formRef = useRef<FormHandles>(null);
+  const dispatch = useDispatch()
+  
   const [fullName, setFullName] = useState('');
   const [CPF_CNPJ, setCPF_CNPJ] = useState('');
 
@@ -59,6 +54,10 @@ function Payment() {
     console.log(CPF_CNPJ)
   }
 
+  const handlePaymentMethod = (paymentMethod: paymentPage)=> {
+    dispatch(setPaymentOption(paymentMethod))
+  }
+
   return (
     <div className="container">
       <Navbar />
@@ -70,8 +69,20 @@ function Payment() {
             <div className="payment-choice">
               <h1>Escolha sua forma de pagamento</h1>
               <div className="buttons-payment">
-                <button><FaRegCreditCard size={30}/> Cartão de crédito</button>
-                <button><FaBarcode size={30}/> Boleto Bancário</button>
+                <button 
+                  onClick={() => handlePaymentMethod(paymentPage.Cartao)}
+                  className={screen.payment === paymentPage.Cartao? 'button-active': ''}
+                >
+                  <FaRegCreditCard size={30}/> 
+                  Cartão de crédito
+                </button>
+                <button 
+                  onClick={()=> handlePaymentMethod(paymentPage.Boleto)}
+                  className={screen.payment === paymentPage.Boleto? 'button-active': ''}
+                >
+                  <FaBarcode size={30}/> 
+                  Boleto Bancário
+                </button>
               </div>
             </div>
 
@@ -80,17 +91,32 @@ function Payment() {
             <div className="payment-data">
               <Form onSubmit={handleSubmit} ref={formRef}>
 
+                { screen.payment === paymentPage.Cartao?                 
+                    <div className="viewform-block">
+                      <Input name="cardNumber" label="Número do cartão" />
+                    </div> 
+                  : ''
+                }
+
                 <div className="viewform-block">
                   <Input name="name" label="Nome completo" onChange={handleChangeFullName} />
-                  <Input name="address" label="Endereço" />
+                  { screen.payment === paymentPage.Cartao? '' : <Input name="address" label="Endereço" />}
                 </div>
                 <div className="viewform-block">
                   <Input name="cpfOrCnpj" label="CPF/CNPJ" onChange={handleChangeCPF} value={CPF_CNPJ}/>
-                  <Input name="complement" label="Complemento" />
+                  { screen.payment === paymentPage.Cartao? '' : <Input name="complement" label="Complemento" />}
+                  
                 </div>
                 <div className="viewform-block">
                   <Input name="email" label="Email"/>
                 </div>
+                { screen.payment === paymentPage.Cartao?                 
+                    <div className="viewform-block">
+                      <Input name="dueData" label="Data de Vencimento" />
+                      <Input name="securityCode" label="Código de segurança" />
+                    </div> 
+                  : ''
+                }
 
               </Form>
             </div>

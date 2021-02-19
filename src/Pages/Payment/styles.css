@@ -20,7 +20,7 @@
 }
 
 .payment-choice h1 {
-  margin-top: 3rem;
+  margin-top: 2rem;
   font: 600 1.4rem Roboto;
   color: #696969;
   opacity: .7;
@@ -53,14 +53,19 @@
   color: var(--color-base);
 }
 
+.button-active {
+  background: #5538C0 !important;
+  color: var(--color-base) !important;
+}
+
 .buttons-payment button svg {
   margin-right: 2.7rem;
 }
 
 .payment-data {
   width: 75%;
-  height: 70%;
-  padding: 3rem 4rem 0rem 4rem;
+  height: 72%;
+  padding: 1rem 2rem 0rem 2rem;
   grid-area: payment-data;
   border-radius: .9rem .9rem 0rem 0rem;
   border: 1px solid var(--color-line-in-white);
@@ -70,6 +75,12 @@
   justify-self: flex-start;
   align-self: flex-end;
   margin-bottom: 2.4rem;
+}
+
+.payment-data .viewform-block input {
+  margin-top: 1rem;
+  height: 3rem;
+  width: 90%;
 }
 
 
