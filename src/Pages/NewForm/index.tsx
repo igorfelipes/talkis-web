@@ -114,6 +114,12 @@ function NewForm() {
               </div>
               <div className="form-block">
                 <h1>Finalizado</h1>
+                <div className="finish-block">
+                  <h1>Clique em publicar para gerar os códigos</h1>
+                </div>
+                <div className="save-block">
+                  <button>Publicar</button>
+                </div>
               </div>
               
             </Form>
