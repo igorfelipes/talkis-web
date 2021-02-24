@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles, SubmitHandler } from '@unform/core';
+import * as Yup from 'yup'
 
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
@@ -12,17 +13,27 @@ import { FaArrowCircleLeft } from 'react-icons/fa';
 
 import './styles.css';
 import LabelDashed from '../../components/LabelDashed';
+import api from '../../services/api';
 
 
 
-interface NewPostData {
+interface NewFormData {
   // openNewTab: boolean;
-  formName: string;
-  buttonTitle: string;
-  buttonText: string;
-  buttonColor: string;
-  funilLead: string;
+  name: string;
+  button_title: string;
+  button_text: string;
+  button_color: string;
+  funil_lead: string;
   sequence: string;
+
+  //fields
+  flag_name: boolean
+  flag_email: boolean
+  flag_birth: boolean
+  flag_whatsapp: boolean
+  flag_city: boolean
+  flag_state: boolean
+  flag_selection: boolean
 }
 
 const funilLeadOptions = [
@@ -44,10 +55,49 @@ function NewForm() {
 
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit: SubmitHandler<NewPostData> = async data => {
+  const handleSubmit: SubmitHandler<NewFormData> = async data => {
 
     console.log('submit handle')
-    
+    console.log(data)
+
+
+    try{
+      formRef.current?.setErrors({})
+
+      const schemaDoc = Yup.object().shape({        
+              name: Yup.string().required('Por favor, digite o email do usuário'),
+              button_title: Yup.string().required('Por favor, digite o Título do botão'),
+              button_text: Yup.string().required('Por favor, digite o texto do botão'),
+              button_color: Yup.string().required('Por favor, selecione a cor do botão'),
+              funil_lead: Yup.string().required('Por favor, selecione o funil de destino'),
+              sequence: Yup.string().required('Por favor, selecione a cor do botão'),
+        })
+
+      await schemaDoc.validate(data, {
+        abortEarly: false,
+      })
+       
+      api.post('capture-forms/', data).then((response) =>{    
+        
+        
+        console.log(response)
+
+      }).catch((err) => {
+        console.log(err)
+        // dispatch(setErrorLogin())
+      })
+
+    }catch(err){
+      if(err instanceof Yup.ValidationError){
+          err.inner.forEach( error => {
+              // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+              error.path ? 
+                formRef.current?.setFieldError(error.path, error.message) 
+                : undefined
+             
+            }) 
+      } 
+    }
   }
 
   return (
@@ -75,11 +125,11 @@ function NewForm() {
 
               <div className="form-block">
                 <h1>Configuração Inicial</h1>
-                <Input name="formName" label="" placeholder="Nome do formulário" />
-                <Input name="buttonTitle" label=""  placeholder="Título do botão"/>
-                <Input name="buttonText" label="" placeholder="Texto do botão"/>
-                <Input name="buttonColor"  label="" placeholder="Cor do botão"/>
-                <Select options={funilLeadOptions} label="" name="funilLead" />
+                <Input name="name" label="" placeholder="Nome do formulário" />
+                <Input name="button_title" label=""  placeholder="Título do botão"/>
+                <Input name="button_text" label="" placeholder="Texto do botão"/>
+                <Input name="button_color"  label="" placeholder="Cor do botão"/>
+                <Select options={funilLeadOptions} label="" name="funil_lead" />
                 <Select options={sequenceOptions} label="" name="sequence"/>
                 <div className="save-block">
                   <button>Salvar</button>
@@ -88,28 +138,28 @@ function NewForm() {
               <div className="form-block">
                 <h1>Campos do Formulário</h1>
                   <LabelDashed fieldName="Seu nome">
-                    <Input name="name" label="" type="checkbox" placeholder="Nome do formulário" />
+                    <Input name="flag_name" label="" type="checkbox" />
                   </LabelDashed>
-                  <LabelDashed fieldName="Seu nome">
-                    <Input name="name" label="" type="checkbox" placeholder="Nome do formulário" />
+                  <LabelDashed fieldName="E-mail">
+                    <Input name="flag_email" label="" type="checkbox"  />
                   </LabelDashed>
-                  <LabelDashed fieldName="Seu nome">
-                    <Input name="name" label="" type="checkbox" placeholder="Nome do formulário" />
+                  <LabelDashed fieldName="Data de Nascimento">
+                    <Input name="flag_birth" label="" type="checkbox" />
                   </LabelDashed>
-                  <LabelDashed fieldName="Seu nome">
-                    <Input name="name" label="" type="checkbox" placeholder="Nome do formulário" />
+                  <LabelDashed fieldName="Whatsapp">
+                    <Input name="flag_whatsapp" label="" type="checkbox" />
                   </LabelDashed>
-                  <LabelDashed fieldName="Seu nome">
-                    <Input name="name" label="" type="checkbox" placeholder="Nome do formulário" />
+                  <LabelDashed fieldName="Cidade">
+                    <Input name="flag_city" label="" type="checkbox" />
                   </LabelDashed>
-                  <LabelDashed fieldName="Seu nome">
-                    <Input name="name" label="" type="checkbox" placeholder="Nome do formulário" />
+                  <LabelDashed fieldName="Estado">
+                    <Input name="flag_state" label="" type="checkbox" />
                   </LabelDashed>
-                  <LabelDashed fieldName="Seu nome">
-                    <Input name="name" label="" type="checkbox" placeholder="Nome do formulário" />
+                  <LabelDashed fieldName="Seleção">
+                    <Input name="flag_selection" label="" type="checkbox" />
                   </LabelDashed>
                 <div className="save-block">
-                  <button>Salvar</button>
+                  <button type="submit">Salvar</button>
                 </div>
               </div>
               <div className="form-block">
